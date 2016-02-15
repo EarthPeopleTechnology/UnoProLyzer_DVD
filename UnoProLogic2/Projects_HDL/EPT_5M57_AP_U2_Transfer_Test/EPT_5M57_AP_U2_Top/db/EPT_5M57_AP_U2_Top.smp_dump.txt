@@ -1,0 +1,26 @@
+
+State Machine - |EPT_5M57_AP_U2_Top|state_block_loopback
+Name state_block_loopback.FIFO_EN_HIGH state_block_loopback.BLOCK_LOOPBACK_INIT state_block_loopback.BLOCK_LOOPBACK_IDLE state_block_loopback.FIFO_EN_LOW 
+state_block_loopback.BLOCK_LOOPBACK_IDLE 0 0 0 0 
+state_block_loopback.BLOCK_LOOPBACK_INIT 0 1 1 0 
+state_block_loopback.FIFO_EN_HIGH 1 0 1 0 
+state_block_loopback.FIFO_EN_LOW 0 0 1 1 
+
+State Machine - |EPT_5M57_AP_U2_Top|block_transfer_out_state
+Name block_transfer_out_state.BLK_TRANSFER_OUT_COUNT 
+block_transfer_out_state.BLK_TRANSFER_OUT_IDLE 0 
+block_transfer_out_state.BLK_TRANSFER_OUT_COUNT 1 
+
+State Machine - |EPT_5M57_AP_U2_Top|transfer_to_host_state
+Name transfer_to_host_state.TRANSFER_HOST_LOOPBACK_COMPLETE transfer_to_host_state.TRANSFER_HOST_IDLE transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START 
+transfer_to_host_state.TRANSFER_HOST_IDLE 0 0 0 
+transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START 0 1 1 
+transfer_to_host_state.TRANSFER_HOST_LOOPBACK_COMPLETE 1 1 0 
+
+State Machine - |EPT_5M57_AP_U2_Top|transfer_control_state
+Name transfer_control_state.TRANSFER_DECODE_BYTE transfer_control_state.TRANSFER_CONTROL_HDR2 transfer_control_state.TRANSFER_CONTROL_HDR1 transfer_control_state.TRANSFER_CONTROL_IDLE transfer_control_state.TRANSFER_CONTROL_SET 
+transfer_control_state.TRANSFER_CONTROL_IDLE 0 0 0 0 0 
+transfer_control_state.TRANSFER_CONTROL_HDR1 0 0 1 1 0 
+transfer_control_state.TRANSFER_CONTROL_HDR2 0 1 0 1 0 
+transfer_control_state.TRANSFER_DECODE_BYTE 1 0 0 1 0 
+transfer_control_state.TRANSFER_CONTROL_SET 0 0 0 1 1 

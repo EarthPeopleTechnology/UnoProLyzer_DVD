@@ -1,0 +1,580 @@
+Analysis & Synthesis report for EPT_5M57_AP_U2_Top
+Mon Nov 02 22:36:47 2015
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |EPT_5M57_AP_U2_Top|state_block_loopback
+  9. State Machine - |EPT_5M57_AP_U2_Top|block_transfer_out_state
+ 10. State Machine - |EPT_5M57_AP_U2_Top|transfer_to_host_state
+ 11. State Machine - |EPT_5M57_AP_U2_Top|transfer_control_state
+ 12. User-Specified and Inferred Latches
+ 13. Logic Cells Representing Combinational Loops
+ 14. Registers Removed During Synthesis
+ 15. General Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |EPT_5M57_AP_U2_Top
+ 18. Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO
+ 19. Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL
+ 20. Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL
+ 21. Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY
+ 22. Parameter Settings for User Entity Instance: eptWireOR:wireOR
+ 23. Port Connectivity Checks: "sync_fifo:BLOCK_IN_FIFO"
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-----------------------------+--------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Nov 02 22:36:47 2015      ;
+; Quartus II 64-Bit Version   ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name               ; EPT_5M57_AP_U2_Top                         ;
+; Top-level Entity Name       ; EPT_5M57_AP_U2_Top                         ;
+; Family                      ; MAX V                                      ;
+; Total logic elements        ; 634                                        ;
+; Total pins                  ; 51                                         ;
+; Total virtual pins          ; 0                                          ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
++-----------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M570ZT100C5       ;                    ;
+; Top-level entity name                                                      ; EPT_5M57_AP_U2_Top ; EPT_5M57_AP_U2_Top ;
+; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                          ;
++------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                                              ; Library ;
++------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../src/active_trigger.vqm          ; yes             ; User Verilog Quartus Mapping File  ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/active_trigger.vqm          ;         ;
+; ../src/active_transfer_library.vqm ; yes             ; User Verilog Quartus Mapping File  ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/active_transfer_library.vqm ;         ;
+; ../src/active_transfer.vqm         ; yes             ; User Verilog Quartus Mapping File  ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/active_transfer.vqm         ;         ;
+; ../src/active_block.vqm            ; yes             ; User Verilog Quartus Mapping File  ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/active_block.vqm            ;         ;
+; ../src/write_control_logic.v       ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/write_control_logic.v       ;         ;
+; ../src/sync_fifo.v                 ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/sync_fifo.v                 ;         ;
+; ../src/read_control_logic.v        ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/read_control_logic.v        ;         ;
+; ../src/mem_array.v                 ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/mem_array.v                 ;         ;
+; ../src/eptWireOR.v                 ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/eptWireOR.v                 ;         ;
+; ../src/EPT_5M57_AP_U2_Top.v        ; yes             ; User Verilog HDL File              ; C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/src/EPT_5M57_AP_U2_Top.v        ;         ;
++------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 634   ;
+;     -- Combinational with no register       ; 291   ;
+;     -- Register only                        ; 137   ;
+;     -- Combinational with a register        ; 206   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 204   ;
+;     -- 3 input functions                    ; 116   ;
+;     -- 2 input functions                    ; 166   ;
+;     -- 1 input functions                    ; 10    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 541   ;
+;     -- arithmetic mode                      ; 93    ;
+;     -- qfbk mode                            ; 19    ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 82    ;
+;     -- asynchronous clear/load mode         ; 244   ;
+;                                             ;       ;
+; Total registers                             ; 343   ;
+; Total logic cells in carry chains           ; 108   ;
+; I/O pins                                    ; 51    ;
+; Maximum fan-out node                        ; aa[1] ;
+; Maximum fan-out                             ; 343   ;
+; Total fan-out                               ; 2553  ;
+; Average fan-out                             ; 3.73  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                     ; Library Name ;
++-----------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
+; |EPT_5M57_AP_U2_Top                                       ; 634 (99)    ; 343          ; 0          ; 51   ; 0            ; 291 (51)     ; 137 (13)          ; 206 (35)         ; 108 (21)        ; 19 (0)     ; |EPT_5M57_AP_U2_Top                                                                                                     ; work         ;
+;    |active_block:BLOCK_TRANSFER_INST|                     ; 85 (85)     ; 52           ; 0          ; 0    ; 0            ; 33 (33)      ; 16 (16)           ; 36 (36)          ; 24 (24)         ; 0 (0)      ; |EPT_5M57_AP_U2_Top|active_block:BLOCK_TRANSFER_INST                                                                    ; work         ;
+;    |active_transfer:ACTIVE_TRANSFER_INST|                 ; 34 (34)     ; 21           ; 0          ; 0    ; 0            ; 13 (13)      ; 10 (10)           ; 11 (11)          ; 0 (0)           ; 1 (1)      ; |EPT_5M57_AP_U2_Top|active_transfer:ACTIVE_TRANSFER_INST                                                                ; work         ;
+;    |active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST| ; 240 (0)     ; 125          ; 0          ; 8    ; 0            ; 115 (0)      ; 26 (0)            ; 99 (0)           ; 55 (0)          ; 18 (0)     ; |EPT_5M57_AP_U2_Top|active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST                                                ; work         ;
+;       |endpoint_registers:ENDPOINT_REGISTERS_INST|        ; 193 (193)   ; 103          ; 0          ; 0    ; 0            ; 90 (90)      ; 26 (26)           ; 77 (77)          ; 47 (47)         ; 18 (18)    ; |EPT_5M57_AP_U2_Top|active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST     ;              ;
+;       |ft_245_state_machine:FT_245_STATE_MACHINE_INST|    ; 47 (47)     ; 22           ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 22 (22)          ; 8 (8)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST ;              ;
+;    |active_trigger:ACTIVE_TRIGGER_INST|                   ; 40 (40)     ; 15           ; 0          ; 0    ; 0            ; 25 (25)      ; 8 (8)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|active_trigger:ACTIVE_TRIGGER_INST                                                                  ; work         ;
+;    |eptWireOR:wireOR|                                     ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|eptWireOR:wireOR                                                                                    ; work         ;
+;    |sync_fifo:BLOCK_IN_FIFO|                              ; 127 (0)     ; 82           ; 0          ; 0    ; 0            ; 45 (0)       ; 64 (0)            ; 18 (0)           ; 8 (0)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|sync_fifo:BLOCK_IN_FIFO                                                                             ; work         ;
+;       |mem_array:U_MEM_ARRAY|                             ; 112 (112)   ; 72           ; 0          ; 0    ; 0            ; 40 (40)      ; 64 (64)           ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY                                                       ; work         ;
+;       |read_control_logic:U_READ_CTRL|                    ; 9 (9)       ; 5            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 5 (5)            ; 4 (4)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL                                              ; work         ;
+;       |write_control_logic:U_WRITE_CTRL|                  ; 6 (6)       ; 5            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; 4 (4)           ; 0 (0)      ; |EPT_5M57_AP_U2_Top|sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL                                            ; work         ;
++-----------------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_U2_Top|state_block_loopback                                                                                                                                              ;
++------------------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+----------------------------------+
+; Name                                     ; state_block_loopback.FIFO_EN_HIGH ; state_block_loopback.BLOCK_LOOPBACK_INIT ; state_block_loopback.BLOCK_LOOPBACK_IDLE ; state_block_loopback.FIFO_EN_LOW ;
++------------------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+----------------------------------+
+; state_block_loopback.BLOCK_LOOPBACK_IDLE ; 0                                 ; 0                                        ; 0                                        ; 0                                ;
+; state_block_loopback.BLOCK_LOOPBACK_INIT ; 0                                 ; 1                                        ; 1                                        ; 0                                ;
+; state_block_loopback.FIFO_EN_HIGH        ; 1                                 ; 0                                        ; 1                                        ; 0                                ;
+; state_block_loopback.FIFO_EN_LOW         ; 0                                 ; 0                                        ; 1                                        ; 1                                ;
++------------------------------------------+-----------------------------------+------------------------------------------+------------------------------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_U2_Top|block_transfer_out_state                                      ;
++-------------------------------------------------+-------------------------------------------------+
+; Name                                            ; block_transfer_out_state.BLK_TRANSFER_OUT_COUNT ;
++-------------------------------------------------+-------------------------------------------------+
+; block_transfer_out_state.BLK_TRANSFER_OUT_IDLE  ; 0                                               ;
+; block_transfer_out_state.BLK_TRANSFER_OUT_COUNT ; 1                                               ;
++-------------------------------------------------+-------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_U2_Top|transfer_to_host_state                                                                                                                                                        ;
++--------------------------------------------------------+--------------------------------------------------------+-------------------------------------------+-----------------------------------------------------+
+; Name                                                   ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_COMPLETE ; transfer_to_host_state.TRANSFER_HOST_IDLE ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START ;
++--------------------------------------------------------+--------------------------------------------------------+-------------------------------------------+-----------------------------------------------------+
+; transfer_to_host_state.TRANSFER_HOST_IDLE              ; 0                                                      ; 0                                         ; 0                                                   ;
+; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START    ; 0                                                      ; 1                                         ; 1                                                   ;
+; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_COMPLETE ; 1                                                      ; 1                                         ; 0                                                   ;
++--------------------------------------------------------+--------------------------------------------------------+-------------------------------------------+-----------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |EPT_5M57_AP_U2_Top|transfer_control_state                                                                                                                                                                                                                            ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+; Name                                         ; transfer_control_state.TRANSFER_DECODE_BYTE ; transfer_control_state.TRANSFER_CONTROL_HDR2 ; transfer_control_state.TRANSFER_CONTROL_HDR1 ; transfer_control_state.TRANSFER_CONTROL_IDLE ; transfer_control_state.TRANSFER_CONTROL_SET ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+; transfer_control_state.TRANSFER_CONTROL_IDLE ; 0                                           ; 0                                            ; 0                                            ; 0                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_HDR1 ; 0                                           ; 0                                            ; 1                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_HDR2 ; 0                                           ; 1                                            ; 0                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_DECODE_BYTE  ; 1                                           ; 0                                            ; 0                                            ; 1                                            ; 0                                           ;
+; transfer_control_state.TRANSFER_CONTROL_SET  ; 0                                           ; 0                                            ; 0                                            ; 1                                            ; 1                                           ;
++----------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; LED[0]_898                                         ; Decoder0            ; yes                    ;
+; LED[1]_912                                         ; Decoder0            ; yes                    ;
+; LED[2]_926                                         ; Decoder0            ; yes                    ;
+; LED[3]_940                                         ; Decoder0            ; yes                    ;
+; start_block_transfer                               ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                                                                                    ;
++----------------------------------------------------------------------------------------------------------------------------+----+
+; Logic Cell Name                                                                                                            ;    ;
++----------------------------------------------------------------------------------------------------------------------------+----+
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_RD_N               ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[0] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[1] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[2] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[3] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|DATA_BYTE_READY        ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[4] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[5] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[6] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[7] ;    ;
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|transfer_busy              ;    ;
+; Number of logic cells representing combinational loops                                                                     ; 11 ;
++----------------------------------------------------------------------------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                              ;
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                          ; Reason for Removal                     ;
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[0] ; Stuck at GND due to stuck port reg_out ;
+; state_block_loopback~8                                                                                                 ; Lost fanout                            ;
+; state_block_loopback~9                                                                                                 ; Lost fanout                            ;
+; block_transfer_out_state~7                                                                                             ; Lost fanout                            ;
+; transfer_to_host_state~9                                                                                               ; Lost fanout                            ;
+; transfer_to_host_state~10                                                                                              ; Lost fanout                            ;
+; transfer_control_state~4                                                                                               ; Lost fanout                            ;
+; transfer_control_state~5                                                                                               ; Lost fanout                            ;
+; transfer_control_state~7                                                                                               ; Lost fanout                            ;
+; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_COMPLETE                                                                 ; Merged with transfer_out_reg           ;
+; Total Number of Removed Registers = 10                                                                                 ;                                        ;
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 343   ;
+; Number of registers using Synchronous Clear  ; 34    ;
+; Number of registers using Synchronous Load   ; 22    ;
+; Number of registers using Asynchronous Clear ; 244   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 226   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |EPT_5M57_AP_U2_Top|block_out_counter[3]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |EPT_5M57_AP_U2_Top|fifo_wren_reg            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |EPT_5M57_AP_U2_Top|state_block_loopback     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |EPT_5M57_AP_U2_Top|block_transfer_out_state ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |EPT_5M57_AP_U2_Top|state_block_loopback     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |EPT_5M57_AP_U2_Top ;
++---------------------------------+--------------------------+-----------------------+
+; Parameter Name                  ; Value                    ; Type                  ;
++---------------------------------+--------------------------+-----------------------+
+; TRANSFER_CONTROL_BYTE1          ; 01011010                 ; Unsigned Binary       ;
+; TRANSFER_CONTROL_BYTE2          ; 11000011                 ; Unsigned Binary       ;
+; TRANSFER_CONTROL_BYTE3          ; 01111110                 ; Unsigned Binary       ;
+; TRANSFER_CONTROL_IDLE           ; 0                        ; Signed Integer        ;
+; TRANSFER_CONTROL_HDR1           ; 1                        ; Signed Integer        ;
+; TRANSFER_CONTROL_HDR2           ; 2                        ; Signed Integer        ;
+; TRANSFER_DECODE_BYTE            ; 3                        ; Signed Integer        ;
+; TRANSFER_CONTROL_SET            ; 4                        ; Signed Integer        ;
+; GLOBAL_RESET_COUNT              ; 111000                   ; Unsigned Binary       ;
+; TRANSFER_HOST_IDLE              ; 1                        ; Signed Integer        ;
+; TRANSFER_HOST_LOOPBACK_START    ; 2                        ; Signed Integer        ;
+; TRANSFER_HOST_LOOPBACK_COMPLETE ; 3                        ; Signed Integer        ;
+; BLOCK_LOOPBACK_IDLE             ; 1                        ; Signed Integer        ;
+; BLOCK_LOOPBACK_INIT             ; 2                        ; Signed Integer        ;
+; FIFO_EN_HIGH                    ; 3                        ; Signed Integer        ;
+; FIFO_EN_LOW                     ; 4                        ; Signed Integer        ;
+; BLK_TRANSFER_OUT_IDLE           ; 1                        ; Signed Integer        ;
+; BLK_TRANSFER_OUT_COUNT          ; 2                        ; Signed Integer        ;
+; LED_COUNT                       ; 011001001011010101000000 ; Unsigned Binary       ;
++---------------------------------+--------------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; ADDR_WIDTH     ; 4     ; Signed Integer                              ;
+; DATA_WIDTH     ; 8     ; Signed Integer                              ;
+; DEPTH          ; 8     ; Signed Integer                              ;
+; AEMPTY         ; 2     ; Signed Integer                              ;
+; AFULL          ; 7     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; ADDR_WIDTH     ; 4     ; Signed Integer                                                               ;
+; AFULL          ; 7     ; Signed Integer                                                               ;
+; DEPTH          ; 8     ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; ADDR_WIDTH     ; 4     ; Signed Integer                                                             ;
+; AEMPTY         ; 2     ; Signed Integer                                                             ;
+; DEPTH          ; 8     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; ADDR_WIDTH     ; 4     ; Signed Integer                                                    ;
+; DEPTH          ; 8     ; Signed Integer                                                    ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: eptWireOR:wireOR ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; N              ; 3     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sync_fifo:BLOCK_IN_FIFO"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; flush       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rdata_valid ; Output ; Info     ; Explicitly unconnected                                                              ;
+; fifo_empty  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fifo_aempty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fifo_full   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fifo_afull  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; write_ack   ; Output ; Info     ; Explicitly unconnected                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Mon Nov 02 22:36:29 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EPT_5M57_AP_U2_Top -c EPT_5M57_AP_U2_Top
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/active_trigger.vqm
+    Info (12023): Found entity 1: active_trigger
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/active_transfer_library.vqm
+    Info (12023): Found entity 1: active_transfer_library
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/active_transfer.vqm
+    Info (12023): Found entity 1: active_transfer
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/active_control_register.vqm
+    Info (12023): Found entity 1: active_control_register
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/active_block.vqm
+    Info (12023): Found entity 1: active_block
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/write_control_logic.v
+    Info (12023): Found entity 1: write_control_logic
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/sync_fifo.v
+    Info (12023): Found entity 1: sync_fifo
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/read_control_logic.v
+    Info (12023): Found entity 1: read_control_logic
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/mem_array.v
+    Info (12023): Found entity 1: mem_array
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/eptwireor.v
+    Info (12023): Found entity 1: eptWireOR
+Info (12021): Found 1 design units, including 1 entities, in source file /jolly/products/earth people technology/unoprologic2_usb_cpld_project_2.2_dvd/projects_hdl/ept_5m57_ap_u2_transfer_test/src/ept_5m57_ap_u2_top.v
+    Info (12023): Found entity 1: EPT_5M57_AP_U2_Top
+Info (12127): Elaborating entity "EPT_5M57_AP_U2_Top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at EPT_5M57_AP_U2_Top.v(124): object "switch_reset" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EPT_5M57_AP_U2_Top.v(146): object "start_block_transfer_reg" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at EPT_5M57_AP_U2_Top.v(258): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at EPT_5M57_AP_U2_Top.v(250): inferring latch(es) for variable "LED", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at EPT_5M57_AP_U2_Top.v(408): inferring latch(es) for variable "start_block_transfer", which holds its previous value in one or more paths through the always construct
+Warning (10034): Output port "LB_IOL" at EPT_5M57_AP_U2_Top.v(49) has no driver
+Info (10041): Inferred latch for "start_block_transfer" at EPT_5M57_AP_U2_Top.v(412)
+Info (10041): Inferred latch for "LED[0]" at EPT_5M57_AP_U2_Top.v(254)
+Info (10041): Inferred latch for "LED[1]" at EPT_5M57_AP_U2_Top.v(254)
+Info (10041): Inferred latch for "LED[2]" at EPT_5M57_AP_U2_Top.v(254)
+Info (10041): Inferred latch for "LED[3]" at EPT_5M57_AP_U2_Top.v(254)
+Info (12128): Elaborating entity "sync_fifo" for hierarchy "sync_fifo:BLOCK_IN_FIFO"
+Info (12128): Elaborating entity "write_control_logic" for hierarchy "sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL"
+Info (12128): Elaborating entity "read_control_logic" for hierarchy "sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL"
+Info (12128): Elaborating entity "mem_array" for hierarchy "sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY"
+Info (12128): Elaborating entity "active_transfer_library" for hierarchy "active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST"
+Info (12128): Elaborating entity "eptWireOR" for hierarchy "eptWireOR:wireOR"
+Info (12128): Elaborating entity "active_trigger" for hierarchy "active_trigger:ACTIVE_TRIGGER_INST"
+Info (12128): Elaborating entity "active_transfer" for hierarchy "active_transfer:ACTIVE_TRANSFER_INST"
+Info (12128): Elaborating entity "active_block" for hierarchy "active_block:BLOCK_TRANSFER_INST"
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "LB_SER[0]" has no driver
+    Warning (13040): bidirectional pin "LB_SER[1]" has no driver
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "bc_out[0]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[0]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[1]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[2]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[3]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[4]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[5]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[6]" is stuck at GND
+    Warning (13410): Pin "LB_IOL[7]" is stuck at GND
+    Warning (13410): Pin "TR_DIR_1" is stuck at GND
+    Warning (13410): Pin "TR_OE_1" is stuck at GND
+    Warning (13410): Pin "TR_DIR_2" is stuck at GND
+    Warning (13410): Pin "TR_OE_2" is stuck at VCC
+    Warning (13410): Pin "TR_DIR_3" is stuck at GND
+    Warning (13410): Pin "TR_OE_3" is stuck at VCC
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "active_transfer:ACTIVE_TRANSFER_INST|uc_out~9"
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "LB_AD[0]"
+    Warning (15610): No output dependent on input pin "LB_AD[1]"
+    Warning (15610): No output dependent on input pin "LB_AD[2]"
+    Warning (15610): No output dependent on input pin "LB_AD[3]"
+    Warning (15610): No output dependent on input pin "LB_AD[4]"
+    Warning (15610): No output dependent on input pin "LB_AD[5]"
+    Warning (15610): No output dependent on input pin "LB_IOH[0]"
+    Warning (15610): No output dependent on input pin "LB_IOH[1]"
+    Warning (15610): No output dependent on input pin "LB_IOH[2]"
+    Warning (15610): No output dependent on input pin "LB_IOH[3]"
+    Warning (15610): No output dependent on input pin "LB_IOH[4]"
+    Warning (15610): No output dependent on input pin "LB_IOH[5]"
+    Warning (15610): No output dependent on input pin "LB_IOH[6]"
+    Warning (15610): No output dependent on input pin "LB_IOH[7]"
+    Warning (15610): No output dependent on input pin "SW_USER_1"
+    Warning (15610): No output dependent on input pin "SW_USER_2"
+Info (21057): Implemented 685 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21060): Implemented 10 bidirectional pins
+    Info (21061): Implemented 634 logic cells
+Info (144001): Generated suppressed messages file C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/EPT_5M57_AP_U2_Top/output_files/EPT_5M57_AP_U2_Top.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 633 megabytes
+    Info: Processing ended: Mon Nov 02 22:36:47 2015
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:41
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Jolly/Products/Earth People Technology/UNOPROLOGIC2_USB_CPLD_PROJECT_2.2_DVD/Projects_HDL/EPT_5M57_AP_U2_Transfer_Test/EPT_5M57_AP_U2_Top/output_files/EPT_5M57_AP_U2_Top.map.smsg.
+
+

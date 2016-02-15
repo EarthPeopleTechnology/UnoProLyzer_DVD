@@ -1,0 +1,8 @@
+
+State Machine - |EPT_5M57_AP_U2_Top|transfer_control_state
+Name transfer_control_state.TRANSFER_DECODE_BYTE transfer_control_state.TRANSFER_CONTROL_HDR2 transfer_control_state.TRANSFER_CONTROL_HDR1 transfer_control_state.TRANSFER_CONTROL_IDLE transfer_control_state.TRANSFER_CONTROL_SET 
+transfer_control_state.TRANSFER_CONTROL_IDLE 0 0 0 0 0 
+transfer_control_state.TRANSFER_CONTROL_HDR1 0 0 1 1 0 
+transfer_control_state.TRANSFER_CONTROL_HDR2 0 1 0 1 0 
+transfer_control_state.TRANSFER_DECODE_BYTE 1 0 0 1 0 
+transfer_control_state.TRANSFER_CONTROL_SET 0 0 0 1 1 

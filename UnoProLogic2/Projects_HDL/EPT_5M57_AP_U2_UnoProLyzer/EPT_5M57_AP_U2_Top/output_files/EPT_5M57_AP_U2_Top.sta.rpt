@@ -1,0 +1,231 @@
+TimeQuest Timing Analyzer report for EPT_5M57_AP_U2_Top
+Sat Aug 15 02:06:10 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Fmax Summary
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width Summary
+ 12. Propagation Delay
+ 13. Minimum Propagation Delay
+ 14. Clock Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths
+ 18. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name      ; EPT_5M57_AP_U2_Top                                 ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M570ZT100C5                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------+
+; SDC File List                                                  ;
++----------------------------+--------+--------------------------+
+; SDC File Path              ; Status ; Read at                  ;
++----------------------------+--------+--------------------------+
+; EPT_5M57_AP_U2_Top.out.sdc ; OK     ; Sat Aug 15 02:06:10 2015 ;
++----------------------------+--------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+---------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type    ; Period ; Frequency ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+---------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; aa[1]      ; Virtual ; 15.150 ; 66.01 MHz ; 0.000 ; 7.575 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { }     ;
+; CLK_66     ; Virtual ; 15.150 ; 66.01 MHz ; 0.000 ; 7.575 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { }     ;
++------------+---------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
+----------------
+; Fmax Summary ;
+----------------
+No paths to report.
+
+
+-----------------
+; Setup Summary ;
+-----------------
+No paths to report.
+
+
+----------------
+; Hold Summary ;
+----------------
+No paths to report.
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
+-------------------------------
+; Minimum Pulse Width Summary ;
+-------------------------------
+No paths to report.
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; ADC_EOC    ; LB_AD[5]    ; 13.212 ;    ;    ; 13.212 ;
+; ADC_MISO   ; LB_AD[2]    ; 13.840 ;    ;    ; 13.840 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; ADC_EOC    ; LB_AD[5]    ; 13.212 ;    ;    ; 13.212 ;
+; ADC_MISO   ; LB_AD[2]    ; 13.840 ;    ;    ; 13.840 ;
++------------+-------------+--------+----+----+--------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 3     ; 3    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 20    ; 20   ;
+; Unconstrained Output Port Paths ; 42    ; 42   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Sat Aug 15 02:06:08 2015
+Info: Command: quartus_sta EPT_5M57_AP_U2_Top -c EPT_5M57_AP_U2_Top
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 11 combinational loops as latches.
+Info (332104): Reading SDC File: 'EPT_5M57_AP_U2_Top.out.sdc'
+Warning (332049): Ignored set_input_delay at EPT_5M57_AP_U2_Top.out.sdc(68): Positional argument: object_list targets with value [get_ports {LB_SER[0]}] contains no input ports
+    Info (332050): set_input_delay -add_delay  -clock [get_clocks {CLK_66}]  1.000 [get_ports {LB_SER[0]}]
+Warning (332049): Ignored set_input_delay at EPT_5M57_AP_U2_Top.out.sdc(69): Positional argument: object_list targets with value [get_ports {LB_SER[1]}] contains no input ports
+    Info (332050): set_input_delay -add_delay  -clock [get_clocks {CLK_66}]  1.000 [get_ports {LB_SER[1]}]
+Warning (332060): Node: aa[1] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR is being clocked by aa[1]
+Warning (332060): Node: spi_iface_model:SPI_IFACE_INST|CLK_SPI was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register spi_iface_model:SPI_IFACE_INST|write_SPI:write_spi_inst|DATA_OUT is being clocked by spi_iface_model:SPI_IFACE_INST|CLK_SPI
+Warning (332060): Node: active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[1] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_REGISTER_DECODE[2] is being clocked by active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[1]
+Warning (332061): Virtual clock aa[1] is never referenced in any input or output delay assignment.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332140): No fmax paths to report
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 464 megabytes
+    Info: Processing ended: Sat Aug 15 02:06:10 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

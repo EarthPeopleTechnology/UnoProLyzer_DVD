@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at EPT_5M57_AP_U2_Top.v(360): always construct contains both blocking and non-blocking assignments
